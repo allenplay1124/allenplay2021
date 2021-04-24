@@ -6,7 +6,7 @@ export default {
   head: {
     title: '攻程獅的攻城筆記',
     htmlAttrs: {
-      lang: 'zh-Hant-TW'
+      lang: 'zh-TW'
     },
     meta: [
       { charset: 'utf-8' },
@@ -30,13 +30,25 @@ export default {
       }
     ]
   },
+  //環境變數
+  env: {
+    //網址
+    baseUrl: 'http://127.0.0.1:3000',
+    //每頁文章數
+    pageLimit: 8
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/css/home.scss',
+    '~/assets/css/post.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/comm', ssr: true},
+    { src: '~/plugins/disqus', ssr: true},
+    { src: '~/plugins/moment', ssr: true}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <nav class="page navigation" v-if="totalPage > 1">
+      <nav class="page navigation">
         <ul class="pagination justify-content-center">
           <li class="page-item" v-for="p in totalPage" :key="p">
             <nuxt-link :to="'/home-page/' + p" class="page-link">
@@ -61,19 +61,19 @@
     </div>
   </div>
 </template>
-
 <script>
 import HomeHeader from "~/components/HomeHeader";
-
 export default {
   components: {
     HomeHeader
   },
-  async asyncData({ $content, env }) {
+  async asyncData({ $content, params, env }) {
     const allPost = await $content("articles").fetch();
     const pageLimit = process.env.pageLimit;
     const total = await allPost.length;
     const totalPage = Math.ceil(total / pageLimit);
+    const page = parseInt(params.page);
+    const skip = (page - 1) * pageLimit;
 
     const posts = await $content("articles")
       .only([
@@ -87,6 +87,7 @@ export default {
         "createdAt"
       ])
       .sortBy("createdAt", "desc")
+      .skip(skip)
       .limit(pageLimit)
       .fetch();
 
@@ -106,6 +107,8 @@ export default {
 
       articles.push(post);
     }
+
+    console.log(articles);
 
     return {
       articles,
