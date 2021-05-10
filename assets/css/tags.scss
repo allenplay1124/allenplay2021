@@ -1,0 +1,26 @@
+#tags {
+    width: 100%;
+    height: 100vh;
+    background: #333 url('/themes/images/tags-bg.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .tags-block {
+        padding-top: 10rem;
+
+        .tag-item {
+            width: 150px;
+            height: 150px;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            background: rgba(18, 72, 197, 0.6);
+            text-align: center;
+            line-height: 150px;
+            margin: 0.5rem;
+            float: left;
+            a {
+                text-decoration: none;
+                color: #FFF;
+            }
+        }
+    }
+}
