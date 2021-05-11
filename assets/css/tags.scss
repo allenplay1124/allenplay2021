@@ -9,17 +9,30 @@
         padding-top: 10rem;
 
         .tag-item {
-            width: 150px;
-            height: 150px;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            background: rgba(18, 72, 197, 0.6);
+            height: 6rem;
+            opacity: 0.6;
             text-align: center;
-            line-height: 150px;
-            margin: 0.5rem;
+            line-height: 5rem;
+            transform: rotate(-10deg);
+            font-weight: bold;
+            box-shadow: 2px 1px 10px 5px #F2F2F2;
+            -webkit-box-shadow: 2px 1px 10px 5px #F2F2F2;
+            -moz-box-shadow: 2px 1px 10px 5px #F2F2F2;
+            -o-box-shadow: 2px 1px 10px 5px #F2F2F2;
             float: left;
             a {
                 text-decoration: none;
                 color: #FFF;
+            }
+
+            .tag-border {
+                height: 5rem;
+                margin-top: 0.5rem;
+                background: rgba(0, 0, 0, 0.3);
+            }
+
+            &:hover {
+                opacity: 1;
             }
         }
     }
