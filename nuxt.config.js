@@ -49,7 +49,7 @@ export default {
   plugins: [
     { src: '~/plugins/comm', ssr: true},
     { src: '~/plugins/disqus', ssr: true},
-    { src: '~/plugins/moment', ssr: true}
+    { src: '~/plugins/moment', ssr: true},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -57,12 +57,21 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/fontawesome'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
   ],
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: true,
+      brands: true,
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

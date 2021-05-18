@@ -4,10 +4,14 @@
     background: #333 url('/themes/images/tags-bg.jpg') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
+    .page-header {
+        padding-top: 8rem;
+        color: #FFF;
+        font-weight: bold;
+        border-bottom: 1px solid #FFF;
+    }
     .tag-block {
-        padding-top: 5rem;
-
+        margin-top: 1rem;
         .tag-item {
             height: 10rem;
 
@@ -20,21 +24,17 @@
             a {
                 text-decoration: none;
                 color: #FFF;
-
+                background: #FFA301;
+                clip-path: polygon(0 100%, 0 2%, 100% 0, 100% 100%, 48% 73%);
+                box-shadow:5px 5px 5px 6px #666;
+                height: 5rem;
+                padding-top: .5rem;
+                padding-right: .3rem;
+                padding-left: .3rem;
                 &:hover {
                     color: #222;
-                    height: 100px;
-                    font-weight: bold;
                     background: #FFF;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    border-radius: 5px;
-                    clip-path: polygon(0 100%, 0 2%, 100% 0, 100% 100%, 48% 73%);
                 }
-
-
             }
         }
     }

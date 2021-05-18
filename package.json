@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
     "core-js": "^3.9.1",
     "file-loader": "^6.2.0",
     "moment": "^2.29.1",
@@ -17,6 +18,9 @@
     "vue-disqus": "^4.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "fibers": "^5.0.0",
     "sass": "^1.32.10",
     "sass-loader": "10"
