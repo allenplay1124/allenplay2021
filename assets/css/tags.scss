@@ -5,34 +5,36 @@
     background-size: cover;
     background-attachment: fixed;
 
-    .tags-block {
-        padding-top: 10rem;
+    .tag-block {
+        padding-top: 5rem;
 
         .tag-item {
-            height: 6rem;
-            opacity: 0.6;
-            text-align: center;
-            line-height: 5rem;
-            transform: rotate(-10deg);
-            font-weight: bold;
-            box-shadow: 2px 1px 10px 5px #F2F2F2;
-            -webkit-box-shadow: 2px 1px 10px 5px #F2F2F2;
-            -moz-box-shadow: 2px 1px 10px 5px #F2F2F2;
-            -o-box-shadow: 2px 1px 10px 5px #F2F2F2;
-            float: left;
+            height: 10rem;
+
+            border-radius: 5px;
+
+            &:hover {
+                background-image:  linear-gradient(rgba(0, 138, 192, 0.90), rgba(0, 183, 255, 0.3));
+            }
+
             a {
                 text-decoration: none;
                 color: #FFF;
-            }
 
-            .tag-border {
-                height: 5rem;
-                margin-top: 0.5rem;
-                background: rgba(0, 0, 0, 0.3);
-            }
+                &:hover {
+                    color: #222;
+                    height: 100px;
+                    font-weight: bold;
+                    background: #FFF;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    border-radius: 5px;
+                    clip-path: polygon(0 100%, 0 2%, 100% 0, 100% 100%, 48% 73%);
+                }
 
-            &:hover {
-                opacity: 1;
+
             }
         }
     }

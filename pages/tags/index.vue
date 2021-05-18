@@ -1,26 +1,23 @@
 <template>
     <div id="tags">
         <BlogHeader></BlogHeader>
-        <div class="row tags-block">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-                <div class="container-fluid">
-                    <div class="row g-5 p-3">
-                        <div 
-                            v-for="(tag, index) in tags" 
-                            :key="index" 
-                            class="tag-item col-md-3 col-12 m-3"
-                            :style="{
-                                background: 'url(' + tag.icon + ')',
-                                'background-repeat': 'no-repeat',
-                                'background-size': 'cover',
-                            }">
-                            <div class="tag-border">
-                                <nuxt-link :to="tag.path">{{ tag.name }}</nuxt-link>
-                            </div>
-                        </div>
+        <div class="container">
+            <div class="row tag-block gx-3">
+                <div v-for="(tag, index) in tags" :key="index"
+                    class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
+                    
+                    <div class="d-flex align-items-center justify-content-center tag-item"
+                        :style="{
+                            background: 'url(' + tag.icon + ')',
+                            'background-repeat': 'no-repeat',
+                            'background-size': 'cover',
+                        }">
+                        <nuxt-link :to="tag.path">
+                            {{ tag.name }}
+                        </nuxt-link>
                     </div>
-                </div>  
+                    
+                </div>
             </div>
         </div>
     </div>
