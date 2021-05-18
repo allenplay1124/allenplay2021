@@ -16,7 +16,7 @@
                             {{ tag.name }}
                         </nuxt-link>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
