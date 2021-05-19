@@ -61,8 +61,9 @@
   }
 }
 
-html, body{
-  height: 100%
+html,
+body {
+  height: 100%;
 }
 
 .page-item {
@@ -107,7 +108,7 @@ html, body{
   padding-bottom: 5rem;
 }
 
-.footer{
+.footer {
   bottom: 0;
   background: #222;
   width: 100%;
@@ -116,4 +117,8 @@ html, body{
   color: #999;
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
 }
