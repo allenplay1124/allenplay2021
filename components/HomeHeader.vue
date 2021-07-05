@@ -1,6 +1,8 @@
 <template>
     <header class="home-header">
-        <div class="avatar"></div>
+        <div class="avatar">
+            <img src="/themes/images/lion_min.png" width="150" />
+        </div>
         <h1>{{ this.$nuxt.$options.head.title }}</h1>
         <ul class="menu">
             <li>
@@ -14,7 +16,7 @@
                 </nuxt-link>
             </li>
             <li>
-                <nuxt-link to="/category">
+                <nuxt-link to="/categories">
                     分類
                 </nuxt-link>
             </li>
@@ -27,8 +29,7 @@
     </header>
 </template>
 <script>
-export default {
-}
+export default {}
 </script>
 <style scoped>
 .home-header {
@@ -44,17 +45,23 @@ export default {
 
 .home-header h1 {
     text-align: center;
-    color: #FFF;
+    color: #fff;
     margin-top: 10px;
 }
 
 .avatar {
     width: 150px;
     height: 150px;
-    background: gray;
+    background: #fa0;
+    background: repeating-conic-gradient(
+        #f00 0,
+        #f00 15deg,
+        #fa0 15deg,
+        #fa0 30deg
+    );
     margin: 0 auto;
     border-radius: 150px;
-    border: 5px solid #FFF;
+    border: 5px solid #fff;
 }
 
 .menu {
@@ -78,7 +85,7 @@ export default {
 }
 
 .menu li a:link {
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -87,6 +94,6 @@ export default {
 }
 
 .menu li a:visited {
-    color: #FFF;
+    color: #fff;
 }
 </style>

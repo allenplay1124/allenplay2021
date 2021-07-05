@@ -28,12 +28,12 @@
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/category" class="nav-link">
+            <nuxt-link to="/categories" class="nav-link">
               分類
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="about" class="nav-link">
+            <nuxt-link to="/about" class="nav-link">
               關於我
             </nuxt-link>
           </li>

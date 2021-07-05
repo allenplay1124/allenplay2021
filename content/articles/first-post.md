@@ -3,10 +3,11 @@ title: 這是第一篇文章
 img: images/first-post/first-post-cover.jpeg
 summary: 這是簡單說明
 category: 
-    - 站務
+    - site
 tags:
     - linux
-    - Windows
+    - windows
+    - site
 ---
 
 ## 測試

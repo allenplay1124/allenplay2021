@@ -7,7 +7,7 @@
       >
         <div class="col" v-for="(post, index) in articles" :key="index">
           <div class="card p-0 shadow-sm">
-            <nuxt-link :to="'/blog/' + post.slug">
+            <nuxt-link :to="post.path">
               <div
                 class="post-cover"
                 :style="{
@@ -27,7 +27,7 @@
 
             <div class="post-content">
               <h4 class="post-title">
-                <nuxt-link :to="'/blog/' + post.slug">
+                <nuxt-link :to="post.path">
                   {{ post.title }}
                 </nuxt-link>
               </h4>
@@ -38,11 +38,11 @@
 
               <div class="post-tag">
                 <span
-                  class="badge rounded-pill bg-info text-dark"
+                  class="badge rounded-pill bg-warning text-dark mx-1"
                   v-for="(tag, index) in post.tags"
                   :key="index"
                 >
-                  {{ tag }}
+                  {{ tag.name }}
                 </span>
               </div>
             </div>
@@ -59,15 +59,20 @@
         </ul>
       </nav>
     </div>
+    <div class="row">
+      <FooterBar></FooterBar>
+    </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 import HomeHeader from "~/components/HomeHeader";
-
+import FooterBar from "~/components/Footerbar"
 export default {
   components: {
-    HomeHeader
+    HomeHeader,
+    FooterBar
   },
   async asyncData({ $content, env }) {
     const allPost = await $content("articles").fetch();
@@ -76,16 +81,6 @@ export default {
     const totalPage = Math.ceil(total / pageLimit);
 
     const posts = await $content("articles")
-      .only([
-        "title",
-        "summary",
-        "img",
-        "slug",
-        "author",
-        "tags",
-        "category",
-        "createdAt"
-      ])
       .sortBy("createdAt", "desc")
       .limit(pageLimit)
       .fetch();
@@ -98,15 +93,22 @@ export default {
       post.img = (await env.baseUrl) + "/" + item.img;
       post.slug = await item.slug;
       post.author = await item.author;
-      post.tags = await item.tags;
-      post.category = await item.category;
-      post.createdAt = await item.createdAt;
-      post.year = await item.createdAt.substr(0, 4);
-      post.date = await item.createdAt.substr(5, 5);
+      
+      post.tags = []
 
+      for (var t of item.tags) {
+        const tagItem = await $content('tags', t).fetch() 
+        post.tags.push(tagItem)
+      }
+
+      post.category = await item.category;
+      post.createdAt = await moment(item.createdAt).format('YYYY-MM-DD hh:mm:ss');
+      post.year = await moment(item.createdAt).format('YYYY')
+      post.date = await moment(item.createdAt).format('MM-DD')
+      post.path = await item.path
       articles.push(post);
     }
-
+    
     return {
       articles,
       page: 1,

@@ -42,7 +42,7 @@ export default {
   },
   async asyncData({ $content }) {
     const tags = await $content("tags").sortBy("sort", "asc").fetch();
-
+    
     return {
       tags,
     };

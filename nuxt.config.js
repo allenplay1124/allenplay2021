@@ -33,7 +33,7 @@ export default {
   //環境變數
   env: {
     //網址
-    baseUrl: 'http://127.0.0.1:5678',
+    baseUrl: 'http://127.0.0.1:5678/',
     //每頁文章數
     pageLimit: 8
   },
@@ -42,7 +42,9 @@ export default {
   css: [
     '~/assets/css/home.scss',
     '~/assets/css/post.scss',
-    '~/assets/css/tags.scss'
+    '~/assets/css/tags.scss',
+    '~/assets/css/category.scss',
+    '~/assets/css/about.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

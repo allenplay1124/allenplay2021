@@ -1,16 +1,17 @@
 <template>
-    <div id="tag">
+    <div id="category">
         <div
+            class="cate-header"
             :style="{
-                background: 'url(/' + tag.cover + ')',
+                background: 'url(' + category.cover + ')',
                 'background-repeat': 'no-repeat',
                 'background-size': 'cover',
                 height: '50vh',
             }"
         >
             <BlogHeader></BlogHeader>
-            <div class="tag-name">
-                {{ tag.name }}
+            <div class="cate-name">
+                {{ category.name }}
             </div>
         </div>
         <div class="wrapper">
@@ -35,14 +36,12 @@
                             ></div>
                         </nuxt-link>
                     </div>
-
                     <div class="col-12 col-sm-12 col-md-8 col-lg-8 p-3">
                         <h1 class="post-title">
                             <nuxt-link :to="item.path">
                                 {{ item.title }}
                             </nuxt-link>
                         </h1>
-
                         <div class="post-time">
                             <fa :icon="['fas', 'clock']" /> {{ item.createdAt }}
                         </div>
@@ -78,8 +77,6 @@
                 </div>
             </div>
         </div>
-
-        <Footerbar></Footerbar>
     </div>
 </template>
 <script>
@@ -92,10 +89,12 @@ export default {
         Footerbar,
     },
     async asyncData({ $content, params, env }) {
-        const tag = await $content('tags', params.slug).fetch()
+        const category = await $content('categories', params.slug).fetch()
+
+        category.cover = (await env.baseUrl) + category.cover
 
         const posts = await $content('articles')
-            .where({ tags: { $contains: params.slug } })
+            .where({ category: { $contains: params.slug } })
             .sortBy('createAt', 'desc')
             .fetch()
 
@@ -104,39 +103,38 @@ export default {
             let post = new Object()
             post.title = await item.title
             post.summary = await item.summary
-            post.img = (await env.baseUrl) + '/' + item.img
+            post.img = (await env.baseUrl) + item.img
             post.slug = await item.slug
             post.author = await item.author
+            post.path = await item.path
+            post.createdAt = moment(item.createdAt).format(
+                'YYYY-MM-DD hh:mm:ss'
+            )
+            post.updatedAt = moment(item.updatedAt).format(
+                'YYYY-MM-DD hh:mm:ss'
+            )
 
             post.tags = []
-            for (let t of item.tags) {
-                const tagItem = await $content('tags', t)
+            for (let tag of item.tags) {
+                let tagItem = await $content('tags', tag)
                     .fetch()
                     .catch(err => {})
-
                 post.tags.push(tagItem)
             }
 
             post.categories = []
             for (let cate of item.category) {
-                const cateItem = await $content('categories', cate)
+                let cateItem = await $content('categories', cate)
                     .fetch()
                     .catch(err => {})
-
                 post.categories.push(cateItem)
             }
-
-            post.path = await item.path
-
-            post.createdAt = await moment(item.createdAt).format(
-                'YYYY-MM-DD hh:mm:ss'
-            )
 
             articles.push(post)
         }
 
         return {
-            tag,
+            category,
             articles,
         }
     },
