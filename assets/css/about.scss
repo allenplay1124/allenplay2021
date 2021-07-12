@@ -1,19 +1,86 @@
 #about {
     width: 100%;
     height: 100vh;
-    background: #333 url("/themes/images/profit-bg.png") no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+
+    .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -999;
+    }
+
+    .bg img {
+        min-height: 100%;
+        min-width: 1000px;
+        width: 100%;
+    }
 
     .abount-box {
-        padding-top: 10rem;
-        
+        padding-top: 3rem;
+
         .abount-content {
             background: rgba(255, 255, 255, 0.4);
             border-radius: 1.5rem;
             text-align: justify;
             font-size: 1.5rem;
             padding: 1.5rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            text-shadow: 0.2rem 0.2rem 0.5rem #fff;
+        }
+
+        .skill-tree-box {
+            .skill-tree {
+                height: 15rem;
+                border-radius: 2rem;
+
+                .card-title {
+                    text-align: center;
+                    line-height: 4rem;
+                }
+            }
+
+            div [tree-item='backend'] {
+                background: cornsilk;
+                .card-title {
+                    background: chocolate;
+                    color: #fff;
+                    border-top-left-radius: 2rem;
+                    border-top-right-radius: 2rem;
+                }
+            }
+
+            div [tree-item='frontend'] {
+                background: ivory;
+                .card-title {
+                    background: goldenrod;
+                    color: yellow;
+                    border-top-left-radius: 2rem;
+                    border-top-right-radius: 2rem;
+                }
+            }
+
+            div [tree-item='database'] {
+                .card-title {
+                    background: yellowgreen;
+                    color: lime;
+                    border-top-left-radius: 2rem;
+                    border-top-right-radius: 2rem;
+                }
+            }
+
+            div [tree-item='os'] {
+                .card-title {
+                    background: orange;
+                    color: rgb(251, 255, 197);
+                    border-top-left-radius: 2rem;
+                    border-top-right-radius: 2rem;
+                }
+            }
         }
     }
 }
