@@ -30,55 +30,96 @@
 
         h2 {
             margin-top: 2rem;
+            margin-bottom: 2rem;
             text-shadow: 0.2rem 0.2rem 0.5rem #fff;
         }
 
         .skill-tree-box {
+            font-size: 1rem;
             .skill-tree {
-                height: 15rem;
+                height: 18rem;
                 border-radius: 2rem;
-
+                margin-top: 1rem;
+                margin-bottom: 1rem;
                 .card-title {
                     text-align: center;
                     line-height: 4rem;
+                    font-weight: bold;
                 }
             }
 
             div [tree-item='backend'] {
-                background: cornsilk;
+                background: rgba(255, 242, 169, 0.5);
                 .card-title {
-                    background: chocolate;
-                    color: #fff;
+                    background: rgb(202, 0, 0, 0.5);
+                    color: #ffef00;
                     border-top-left-radius: 2rem;
                     border-top-right-radius: 2rem;
+                }
+
+                &:hover {
+                    top: -1rem;
+                    background: rgb(255, 242, 169);
+                    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem #999;
+                    .card-title {
+                        background: rgb(202, 0, 0);
+                    }
                 }
             }
 
             div [tree-item='frontend'] {
-                background: ivory;
+                background: rgba(247, 255, 235, 0.5);
                 .card-title {
-                    background: goldenrod;
-                    color: yellow;
+                    background: rgba(1, 107, 105, 0.5);
+                    color: #d2eb46;
                     border-top-left-radius: 2rem;
                     border-top-right-radius: 2rem;
+                }
+
+                &:hover {
+                    top: -1rem;
+                    background: rgb(247, 255, 235);
+                    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem #999;
+                    .card-title {
+                        background: rgb(1, 107, 105);
+                    }
                 }
             }
 
             div [tree-item='database'] {
+                background: rgba(173, 222, 255, 0.5);
                 .card-title {
-                    background: yellowgreen;
-                    color: lime;
+                    background: rgba(6, 64, 131, 0.5);
+                    color: rgb(81, 211, 247);
                     border-top-left-radius: 2rem;
                     border-top-right-radius: 2rem;
+                }
+                &:hover {
+                    top: -1rem;
+                    background: rgb(173, 222, 255);
+                    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem #999;
+                    .card-title {
+                        background: rgba(6, 64, 131);
+                    }
                 }
             }
 
             div [tree-item='os'] {
+                background: rgba(243, 229, 245, 0.5);
                 .card-title {
-                    background: orange;
-                    color: rgb(251, 255, 197);
+                    background: rgba(94, 53, 177, 0.5);
+                    color: #ede7f6;
                     border-top-left-radius: 2rem;
                     border-top-right-radius: 2rem;
+                }
+
+                &:hover {
+                    top: -1rem;
+                    background: rgb(243, 229, 245);
+                    box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem #999;
+                    .card-title {
+                        background: rgba(94, 53, 177);
+                    }
                 }
             }
         }
