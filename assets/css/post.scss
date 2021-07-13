@@ -1,13 +1,18 @@
 #article {
-  .article-post {
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-top: 8rem;
-  }
-
   .post-meta {
     text-align: right;
     color: gray;
+  }
+
+  pre {
+    border-radius: 1rem;
+  }
+
+  img {
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #ccc;
+    border-radius: 1rem;
   }
 
   .post-tags {
@@ -89,14 +94,31 @@
     }
   }
 
-  @media (min-width: 576px) {
+  @media (max-width: 576px) {
+    .article-post {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .col {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
     .article-cover {
       width: 100%;
-      height: 25vh;
+      height: 35vh;
     }
   }
 
   @media (min-width: 768px) {
+    .article-post {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 8rem;
+    }
+
     .article-cover {
       width: 100%;
       height: 25vh;
@@ -104,6 +126,13 @@
   }
 
   @media (min-width: 992px) {
+    
+    .article-post {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 8rem;
+    }
+
     .article-cover {
       width: 100%;
       height: 100vh;
@@ -111,6 +140,12 @@
   }
 
   @media (min-width: 1200px) {
+    .article-post {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 8rem;
+    }
+
     .article-cover {
       width: 100%;
       height: 100vh;
@@ -118,6 +153,12 @@
   }
 
   @media (min-width: 1400px) {
+    .article-post {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 8rem;
+    }
+
     .article-cover {
       width: 100%;
       height: 100vh;
