@@ -153,6 +153,10 @@
   }
 
   @media (min-width: 1400px) {
+    .container, .container-fluid {
+      padding-left: 0px;
+    }
+
     .article-post {
       padding-left: 5rem;
       padding-right: 5rem;
