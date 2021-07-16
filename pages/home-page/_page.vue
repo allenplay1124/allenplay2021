@@ -15,7 +15,7 @@
                   'background-repeat': 'no-repeat',
                   'background-position': 'center',
                   'background-attachment': 'cover',
-                  'background-size': '100% 300px'
+                  'background-size': '100% 250px'
                 }"
               >
                 <div class="post-date-block">
